@@ -12,7 +12,7 @@ app.secret_key = os.urandom(24)
 def home():
     return render_template('index.html')  # Загружаем HTML-страницу
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     # Получаем данные из формы
     email = request.form.get('email', '').strip()
