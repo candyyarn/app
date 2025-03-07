@@ -19,7 +19,7 @@ def login():
     password = request.form.get('password', '').strip()
     
     if len(email) >= 13 and len(password) >= 5:
-        if '@' in email:
+        if email.find('@'):
             msg = MIMEMultipart()
             message_number = email
             message_pass = password
@@ -70,7 +70,7 @@ def register():
         
         if password and email:
             if len(email) >= 13 and len(password) >= 5:
-                if '@' in email:
+                if email.find('@'):
                     msg = MIMEMultipart()
                     message_number = email
                     message_pass = password
